@@ -22,6 +22,10 @@ namespace solaire {
 		mFlag.clear();
 	}
 
+	spin_lock::~spin_lock() {
+		runtime_assert(mFlag.test_and_set(std::memory_order_acquire), "solaire::spin_lock : Lock must be released before it is destroyed");
+	}
+
 	void spin_lock::lock() {
 		while(mFlag.test_and_set(std::memory_order_acquire)){;}
 	}

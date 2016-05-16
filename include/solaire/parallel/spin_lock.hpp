@@ -16,6 +16,7 @@
 //limitations under the License.
 
 #include <atomic>
+#include "solaire/core/core.hpp"
 
 namespace solaire {
 	class spin_lock {
