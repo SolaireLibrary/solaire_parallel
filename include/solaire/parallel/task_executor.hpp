@@ -103,4 +103,4 @@ namespace solaire {
 	};
 }
 
-#endif#pragma once
+#endif
