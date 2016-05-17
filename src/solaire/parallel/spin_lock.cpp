@@ -35,6 +35,6 @@ namespace solaire {
 	}
 
 	bool spin_lock::try_lock() {
-		return mFlag.test_and_set(std::memory_order_acquire);
+		return ! mFlag.test_and_set(std::memory_order_acquire);
 	}
 }
